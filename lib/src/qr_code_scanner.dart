@@ -310,9 +310,9 @@ class QRViewController {
   }
 
   /// Stops the camera and disposes the barcode stream.
-  void dispose() {
-    stopCamera();
+  Future<void> dispose() {
     _scanUpdateController.close();
+    return stopCamera();
   }
 
   /// Updates the view dimensions for iOS.
